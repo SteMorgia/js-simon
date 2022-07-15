@@ -1,28 +1,50 @@
 const containerDom = document.getElementById('container');
 const numeriContainer = document.getElementById('numeri');
-setTimeout (hide, 30000);
-
-
-
-for (let i = 0; i < 5; i++) {
-    let numeriArray = [];
-    let numeri = numeriCasuali (50);
-    console.log(numeri);
-    numeriArray.push(numeri);
-    console.log (numeriArray);
-    numeriContainer.innerText = numeriArray;
-}
+setTimeout (hide, 3000);
+setTimeout (promptDom, 4000);
+let numeriArrayGenerati = [];
+generaNumeri();
+let numeriArrayPrompt = [];
 
 
 
 
 
-function hide () {
-    containerDom.classList.add('d-none');
+
+
+
+
+console.log(numeriArrayPrompt);
+
+
+
+
+
+
+function generaNumeri () {
+    while (numeriArrayGenerati.length < 5) {
+        let numero = numeriCasuali (99);
+        console.log(numero);
+        if (!numeriArrayGenerati.includes(numero)) {
+            numeriArrayGenerati.push(numero);
+        }
+        console.log (numeriArrayGenerati);
+    }
+    numeriContainer.innerText = numeriArrayGenerati;
 }
 
 function numeriCasuali (max) {
     return Math.floor(Math.random() * max);
+}
+
+function hide () {
+    containerDom.classList.add('d-none');
+}
+function promptDom () {
+    for (let i = 0; i < 5; i++) {
+        let valoreInserito = parseInt(prompt('insertisci un numero'));
+        numeriArrayPrompt.push(valoreInserito);
+    }
 }
 
 
