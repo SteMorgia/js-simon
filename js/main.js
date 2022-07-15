@@ -1,10 +1,13 @@
 const containerDom = document.getElementById('container');
 const numeriContainer = document.getElementById('numeri');
-setTimeout (hide, 3000);
-setTimeout (promptDom, 4000);
+const commentoDom = document.getElementById('commento');
+setTimeout (hide, 9000);
+setTimeout (promptDom, 10000);
 let numeriArrayGenerati = [];
 generaNumeri();
 let numeriArrayPrompt = [];
+let punteggio = 0;
+
 
 
 
@@ -45,7 +48,21 @@ function promptDom () {
         let valoreInserito = parseInt(prompt('insertisci un numero'));
         numeriArrayPrompt.push(valoreInserito);
     }
+    let i = 0;
+    while (i < numeriArrayGenerati.length) {
+        if (numeriArrayGenerati.includes(numeriArrayPrompt[i])) {
+            punteggio ++;
+            console.log(punteggio);
+        }
+        i++
+    }
+    aggiungiCommento();
 }
+function aggiungiCommento () {
+    let commento = `il tuo punteggio è di ${punteggio} punti`
+    commentoDom.innerHTML = commento;
+}
+
 
 
 

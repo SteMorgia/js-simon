@@ -10,6 +10,12 @@
     border: 2px solid black;
     padding: 30px 65px;
 }
+#commento {
+    width: 500px;
+    height: 100px;
+    margin: 600px auto 0;
+    font-size: 30px;
+}
 .d-none {
     display: none;
 }
